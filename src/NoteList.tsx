@@ -7,7 +7,7 @@ import styles from "./NotesList.module.css"
 
 type SimplifiedNote = {
     tags: Tag[]
-    titlle: string
+    title: string
     id: string
 }
 
