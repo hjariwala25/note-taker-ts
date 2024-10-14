@@ -47,7 +47,7 @@ export function NoteList({ availableTags, notes, onUpdateTag, onDeleteTag }: Not
                     <Link to="/new">
                         <Button variant="primary">Create</Button>
                     </Link>
-                    <Button onClick={() => setEditTagsModalIsOpen(true)}variant="outline-secondary">Edit Tags</Button>
+                    <Button onClick={() => setEditTagsModalIsOpen(true)} variant="outline-secondary">Edit Tags</Button>
                 </Stack>
             </Col>
         </Row>
@@ -110,7 +110,7 @@ function NoteCard({ id, title, tags }: SimplifiedNote) {
     </Card>
 }
 
-function EditTagModel({availableTags, handleClose, show, onDeleteTag, onUpdateTag}: EditTagsModalProps) {
+function EditTagModel({ availableTags, handleClose, show, onDeleteTag, onUpdateTag }: EditTagsModalProps) {
     return (
         <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton>
@@ -121,9 +121,9 @@ function EditTagModel({availableTags, handleClose, show, onDeleteTag, onUpdateTa
                     <Stack gap={2}>
                         {availableTags.map(tag => (
                             <Row key={tag.id}>
-                                <Col><Form.Control type="text" value={tag.label} onChange={e => onUpdateTag(tag.id, e.target.value)}/></Col>
+                                <Col><Form.Control type="text" value={tag.label} onChange={e => onUpdateTag(tag.id, e.target.value)} /></Col>
                                 <Col xs="auto">
-                                    <Button onClick={() => onDeleteTag(tag.id)}variant="outline-danger">&times;</Button>
+                                    <Button onClick={() => onDeleteTag(tag.id)} variant="outline-danger">&times;</Button>
                                 </Col>
                             </Row>
                         ))}
